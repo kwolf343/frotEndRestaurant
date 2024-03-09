@@ -1,0 +1,36 @@
+<div class="contenedor-total">
+    <div class="container form-group col-md-7 pintar">
+        <div class="boton-cerrar"><i class="bi bi-x-lg" (click)="regresar()"></i></div>
+        <h2>Cliente</h2>
+        <div class="flex1">
+            <div>
+                <img src="assets/user.png" class="fotoPerfil">
+            </div>
+            <div class="derecha">
+                <p><strong>Codigo: </strong>{{reservacionSelec.id}}</p>
+                <p><strong>Dui: </strong>{{reservacionSelec.duiPersona}}</p>
+                <p><strong>Cliente: </strong>{{reservacionSelec.persona}}</p>
+                <p><strong>Fecha reservacion: </strong>{{parseDate(reservacionSelec.fechaReservacion)}}</p>
+                <p><strong>Fecha reserva: </strong>{{reservacionSelec.fechaReserva}}</p>
+                <p><strong>Hora reserva: </strong>{{reservacionSelec.horaReserva}}</p>
+                <p><strong>Numero de personas: </strong>{{reservacionSelec.numPersonas}}</p>
+            </div>
+        </div>
+        <div class="">
+            <div class="col-md-12">
+                <p>
+                    <strong>Mesas:</strong>
+                </p>
+                <div class="d-flex">
+                    <div *ngFor="let mesa of reservaciones[indice].mesas let i=index">
+                        Mesa #{{mesa.id}}
+                        <br>
+                        {{mesa.capacidad}} asientos
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+

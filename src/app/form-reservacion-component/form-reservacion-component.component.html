@@ -1,0 +1,49 @@
+<form #miFormulario="ngForm" (ngSubmit)="guardar(miFormulario)" (keydown.enter)="$event.preventDefault()">
+    <div class="container form-group col-md-8 pintar" >
+        <h2>{{titulo}}</h2>
+        <div *ngIf="zonaReservacion">
+            <label for="persona">Nombre del cliente: <p class="alerta">{{errorPersona}}</p></label><br>
+            <input type="text" name="persona" id="persona" placeholder="Nombre" class="form-control" required
+                [(ngModel)]="persona">
+
+            <label for="duiPersona">Dui: <p class="alerta">{{errorDui}}</p></label>
+            <input type="text" name="duiPersona" id="duiPersona" placeholder="Dui" class="form-control" required
+                [(ngModel)]="duiPersona">
+
+            <label for="fechaReserva">Fecha de reserva: <p class="alerta">{{errorFecha}}</p></label>
+            <input type="date" name="fechaReserva" id="fechaReserva" class="form-control" required
+                [(ngModel)]="fechaReserva">
+
+            <label for="horaReserva">Hora de reserva: <p class="alerta">{{errorHora}}</p></label>
+            <select name="horaReserva" id="horaReserva" class="form-control" required [(ngModel)]="horaSeleccionada">
+                <option *ngFor="let hora of horasDisponibles" [value]="hora">{{hora}}</option>
+            </select>
+
+            <label for="numPersonas">Cantida de personas: <p class="alerta">{{errorNum}}</p></label>
+            <input type="number" name="numPersonas" id="numPersonas" class="form-control" required
+                [(ngModel)]="numPersonas">
+        </div>
+        <div class="col-md-12 flex">
+            <div class="col-md-8 col-xs-6" *ngIf="!zonaReservacion">
+                <app-interior-mesas-component (numeroEnviado)="recibirNumero($event)"></app-interior-mesas-component>
+            </div>
+            <div class="col-md-2 col-xs-3" *ngIf="!zonaReservacion">
+                <strong>Reservadas</strong>
+                <p *ngFor="let mesasR of mesasReservadas" class="red lista">
+                    Mesa: {{mesasR.id}}
+                </p>
+            </div>
+            <div class="col-md-2 col-xs-3" *ngIf="!zonaReservacion">
+                <strong>Seleccionadas</strong>
+                <div *ngFor="let mesasR of mireservacion.mesas; let i = index" class="green flex">
+                    <p class="lista">Mesa: {{mesasR.id}}</p><i class="bi bi-x-lg lista" (click)="quitar(i)"></i>
+                </div>
+            </div>
+        </div>
+        <div class="flex separar">
+            <button type="submit">Guardar</button>
+            <button type="button" (click)="cancelar()">Salir</button>
+        </div>
+    </div>
+    
+</form>

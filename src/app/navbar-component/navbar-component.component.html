@@ -1,0 +1,13 @@
+<header [ngClass]="{'pad': pad}">
+    <nav [ngClass]="{'nav': mostrar}">
+        <button class="cerrarMenu" (click)="cerrar()"><i class="bi bi-x-lg cerrar"></i></button>
+        <div>
+            <ul class="nav-list">
+                <li><a href="">Inicio</a></li>
+                <li><a href="mesas">Mesas</a></li>
+                <li><a href="reservaciones">Reservaciones</a></li>
+            </ul>
+        </div>
+    </nav>
+    <button class="abrirMenu" (click)="abrir()"><i class="bi bi-list"></i></button>
+</header>

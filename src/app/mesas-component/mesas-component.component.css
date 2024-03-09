@@ -1,0 +1,56 @@
+h1{
+    margin: 1%;
+    color: black;
+}
+.contenedorMesas{
+    width: 100%;
+    float: left;
+    padding: 25px;
+    color: #fff;
+}
+.contenedores{
+    width: 96%;
+    float: left;
+    margin: 0 1%;
+}
+.mesas, .seleccion{
+    margin-top: 10px;
+}
+.mesas{
+    background-color: rgb(245,246,247);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.seleccion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.seleccion{
+    color: black;
+    border-radius: 15px;
+    background-color: rgb(245,246,247);
+}
+.seleccion img{
+    margin: 15px 0;
+}
+
+.mensaje{
+    color: black;
+    margin: 15px;
+}
+@media screen and (min-width:700px){
+    .mesas img{
+        width: 70%;
+    }
+    .mesas{
+        width: 68%;
+    }
+    .seleccion{
+        width: 28%;
+    }
+}
+

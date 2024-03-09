@@ -1,0 +1,62 @@
+
+img{
+    width: 100%;
+    padding: 5px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+img:hover{
+    transform: scale(95%);
+}
+img:active{
+    transform: scale(90%);
+}
+.seleccion{
+    color: black;
+    border-radius: 15px;
+    background-color: rgb(245,246,247);
+}
+
+.grid-contenedor{
+    width: 100%;
+    color: black;
+}
+.item1{
+    grid-area: mesa1;
+    transform: scaleX(-1);
+}
+.item2{grid-area: mesa2}
+.item3{grid-area: mesa3}
+.item4{grid-area: mesa4}
+.item5{grid-area: mesa5}
+.item6{grid-area: mesa6}
+.item7{grid-area: mesa7}
+.item8{grid-area: mesa8}
+.item9{grid-area: mesa9}
+.item10{grid-area: mesa10}
+.item11{
+    grid-area: mesa11;
+    transform: rotateX(180deg) rotateY(180deg);
+}
+.item12{grid-area: mesa12}
+.item13{grid-area: mesa13}
+.item14{grid-area: mesa14}
+.item15{grid-area: mesa15}
+.item16{
+    grid-area: mesa16;
+    transform: rotateX(180deg);
+}
+.grid-contenedor{
+    display: grid;
+    grid-template-areas: 'mesa1 mesa1 mesa1 mesa1 mesa2 mesa3 mesa4 mesa5 mesa6 mesa6 mesa6 mesa6'
+                         'mesa7 mesa7 mesa7 mesa8 mesa8 mesa8 mesa9 mesa9 mesa9 mesa10 mesa10 mesa10'
+                         'mesa11 mesa11 mesa11 mesa11 mesa12 mesa13 mesa14 mesa15 mesa16 mesa16 mesa16 mesa16';
+    padding: 10px;
+    grid-gap: 5px;
+  }
+.grid-contenedor div{
+    text-align: center;
+}
+@media screen and (min-width:700px){img{width: 100%;}}
+@media screen and (min-width:1000px){img{width: 60%;}}

@@ -1,0 +1,31 @@
+<div class="principal">
+    <div class="container">
+        <button (click)="nuevaReservacion()">Nueva reservacion</button>
+    </div>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Persona</th>
+                <th scope="col">Dui</th>
+                <th scope="col">Fecha de reserva</th>
+                <th scope="col">Hora de reserva</th>
+                <th scope="col">Gestionar</th> 
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let reservacion of reservaciones let i=index">
+                  <td>{{reservacion.persona}}</td>
+                  <td>{{reservacion.duiPersona}}</td>
+                  <td>{{parseDate(reservacion.fechaReserva)}}</td>
+                  <td>{{reservacion.horaReserva}}</td>
+                  <td>
+                      <a class="detalles" (click)="inspeccionarReservacion(i)"><i class="bi bi-file-text-fill"></i></a>
+                      <a class="editar" (click)="modificarReservacion(i)"><i class="bi bi-pencil-square"></i></a>
+                      <a class="borrar" (click)="eliminarReservacion(i)"><i class="bi bi-trash-fill"></i></a>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>    
+</div>

@@ -1,0 +1,14 @@
+<div class="contenedorMesas">
+    <h1>Mesas</h1>
+    <div class="mesas contenedores">
+        <app-interior-mesas-component (numeroEnviado)="recibirNumero($event)"></app-interior-mesas-component>
+    </div>
+    <div class="seleccion contenedores">
+        <p class="mensaje">{{mensajeConexion}}</p>
+        <div *ngIf="mesas.length > 0 && seleccion !== null && mesas[seleccion]">
+            <h3>Mesa N° {{ mesas[seleccion].id }}</h3>
+            <img [src]="listaDeImagenes[seleccion]" (click)="ver(seleccion)">
+            <p *ngIf="mesas[seleccion].capacidad">Capacidad: {{ mesas[seleccion].capacidad }}</p>
+        </div>
+    </div>
+</div>
